@@ -269,6 +269,16 @@ if uid_list[0] != '':
 		
 			# generate post
 			post_body = unpack_message(uid, email_message, blog_physical_path)
+			# sanitize body by removing <html>, <body>, <head> & <meta> tags, 
+			# but preserve other formatting
+			post_body = re.sub('<html.*?>', '', post_body)
+			post_body = re.sub('</html.*?>', '', post_body)
+			post_body = re.sub('<head.*?>', '', post_body)
+			post_body = re.sub('</head.*?>', '', post_body)
+			post_body = re.sub('<body.*?>', '', post_body)
+			post_body = re.sub('</body.*?>', '', post_body)
+			post_body = re.sub('<meta.*?>', '', post_body)
+			post_body = re.sub('</meta.*?>', '', post_body)
 			
 			post_template = open('posttemplate.html', 'r').read()
 			new_post = post_template
