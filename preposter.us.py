@@ -103,7 +103,7 @@ def unpack_message(uid, message, blog_dir):
 	if html_body:
 		email_body = html_body + email_body
 	else:
-		email_body = text_body + email_body
+		email_body = text_body.replace('\n', '<br>') + email_body
 
 	return email_body
 
