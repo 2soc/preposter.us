@@ -14,7 +14,7 @@
 			var serverHost = location.hostname;
 			var serverPort = location.port;
 			var serverURL = serverProtocol + '//' + serverHost + ':' + serverPort;
-			var blogListURL = serverURL + '/blogs.html';
+			var blogListURL = serverURL + '/journal/blogs.html';
 			
 			var blogListReq = new XMLHttpRequest();
 			blogListReq.onload = renderList;
