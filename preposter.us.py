@@ -292,7 +292,7 @@ if uid_list[0] != '':
 			post_file.close()
 			
 			if not suppress_notification:
-				send_notification(email_address, 'New entry posted', 'Your journal \"%s\" has been posted, you can view it here: http://%s/journal/%s/%s.html' % (post_title, WEB_HOST, humane_blog_name, post_slug))
+				send_notification(email_address, 'New journal entry posted', 'Your journal \"%s\" has been posted, you can view it here: http://%s/journal/%s/%s.html' % (post_title, WEB_HOST, humane_blog_name, post_slug))
 				
 		except:
 			print '****************************************'
