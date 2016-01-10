@@ -209,7 +209,7 @@ if uid_list[0] != '':
 				blog_index_partial.close()
 				
 				if not suppress_notification:
-					send_notification(email_address, 'Your new Preposter.us blog is ready!', 'You just created a Preposter.us blog, a list of your posts can be found here: http://%s/%s .  Find out more about Preposter.us by visiting the project repository at https://github.com/jjg/preposter.us' % (WEB_HOST, humane_blog_name))
+					send_notification(email_address, 'Your new journal is ready!', 'You just created a journal on 2soc.net.  A list of your posts can be found here: http://%s/journal/%s .' % (WEB_HOST, humane_blog_name))
 				
 			post_physical_path = blog_physical_path + '/' + post_slug + '.html'
 			
@@ -292,7 +292,7 @@ if uid_list[0] != '':
 			post_file.close()
 			
 			if not suppress_notification:
-				send_notification(email_address, 'Preposter.us Post Posted!', 'Your post \"%s\" has been posted, you can view it here: http://%s/%s/%s.html' % (post_title, WEB_HOST, humane_blog_name, post_slug))
+				send_notification(email_address, 'New entry posted', 'Your journal \"%s\" has been posted, you can view it here: http://%s/journal/%s/%s.html' % (post_title, WEB_HOST, humane_blog_name, post_slug))
 				
 		except:
 			print '****************************************'
